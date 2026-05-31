@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fdfbf6;
+  --fg: #2b2620;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: #2c3744;
+  color: #fdfbf6;
+  border-radius: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Accessible focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #ab5639;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Subtle topographic texture accent used sparingly */
+.grain {
+  background-image: radial-gradient(
+    rgba(43, 38, 32, 0.035) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
