@@ -43,10 +43,8 @@ export default function Projects() {
           What I&apos;ve built
         </h1>
         <p className="mt-5 font-sans text-lg leading-relaxed text-fg/75">
-          A selection of open-source work — agent skills, LLM composition
-          patterns, and the building blocks behind practical AI systems. Most of
-          it traces back to the same question: how do you make this reliable
-          enough to depend on?
+          Open-source agent skills, LLM composition patterns, and the building
+          blocks behind practical AI systems.
         </p>
       </header>
 

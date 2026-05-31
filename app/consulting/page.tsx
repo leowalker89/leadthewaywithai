@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Engineering",
-    body: "Hands-on help designing, building, and shipping AI systems — from prototype to production. Architecture reviews, implementation, and getting unstuck.",
+    body: "Designing and shipping AI systems — prototype to production.",
   },
   {
     title: "Workshops",
-    body: "Practical, code-forward sessions for teams getting serious about LLMs, agentic workflows, and the tooling around them.",
+    body: "Code-forward sessions on LLMs, agents, and tooling.",
   },
   {
     title: "Advisory",
-    body: "Ongoing guidance for teams navigating AI strategy, evaluation, and the realities of putting models into production.",
+    body: "Guidance on AI strategy, evaluation, and production realities.",
   },
 ];
 
@@ -40,9 +40,8 @@ export default function Consulting() {
           Let&apos;s build something that works
         </h1>
         <p className="mt-5 font-sans text-lg leading-relaxed text-fg/75">
-          I work with teams building real AI systems. The goal is always the
-          same: practical, reliable software — not hype. Most engagements blend
-          engineering, teaching, and advisory.
+          I work with teams building real AI systems — practical, reliable
+          software, not hype.
         </p>
       </header>
 
@@ -86,8 +85,7 @@ export default function Consulting() {
           Start a conversation
         </h2>
         <p className="mt-4 max-w-prose font-sans text-lg leading-relaxed text-fg/75">
-          If you&apos;re working on something where practical AI could help, I&apos;d be
-          glad to hear about it. The best first step is a short conversation.
+          If practical AI could help what you&apos;re building, let&apos;s talk.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a

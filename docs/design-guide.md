@@ -54,6 +54,10 @@ Key principles to apply on every change:
 - **Keep it honest.** Specifics and real outcomes over hype.
 - **Active content cadence.** The site should look maintained — writing and notes
   that update over time.
+- **Scaffold first, build depth over time.** Each section is a concise framework
+  with room to grow, not a finished essay. Prefer labels and one-liners; avoid
+  long narrative paragraphs and fake built-out content (use honest "coming soon"
+  placeholders instead). Add depth incrementally as real material exists.
 
 ---
 
