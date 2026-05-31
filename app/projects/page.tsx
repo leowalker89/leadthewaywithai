@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import RepoCard from "@/components/RepoCard";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Work",
   description:
-    "Open-source work by Leo Walker — agent skills, LLM composition patterns, and practical AI engineering tools.",
+    "Selected work by Leo Walker — agent skills, LLM composition patterns, NLP tooling, and the practical AI systems behind them.",
 };
 
 const repos = [
@@ -35,13 +35,18 @@ const repos = [
 export default function Projects() {
   return (
     <section className="mx-auto max-w-content px-5 py-20 sm:px-8 sm:py-28">
-      <header className="max-w-2xl">
-        <h1 className="font-display text-4xl font-medium tracking-tight text-ink sm:text-5xl">
-          Projects
+      <header className="max-w-prose">
+        <p className="text-sm font-medium uppercase tracking-wider text-sage-500">
+          Work
+        </p>
+        <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-fg sm:text-5xl">
+          What I&apos;ve built
         </h1>
-        <p className="mt-5 text-lg leading-relaxed text-slate-600">
-          A selection of open-source work — agent skills, composition patterns,
-          and the building blocks behind practical AI systems.
+        <p className="mt-5 font-sans text-lg leading-relaxed text-fg/75">
+          A selection of open-source work — agent skills, LLM composition
+          patterns, and the building blocks behind practical AI systems. Most of
+          it traces back to the same question: how do you make this reliable
+          enough to depend on?
         </p>
       </header>
 

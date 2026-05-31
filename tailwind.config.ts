@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -11,41 +12,68 @@ const config: Config = {
         xs: "460px",
       },
       colors: {
-        // Colorado-inspired earth-tone palette
+        // Theme-aware tokens (driven by CSS vars in globals.css)
+        bg: "var(--bg)",
+        fg: "var(--fg)",
+        surface: "var(--surface)",
+        "surface-2": "var(--surface-2)",
+        line: "var(--border)",
+        muted: "var(--muted)",
+        // Colorado / Western earth-tone family (design-guide.md §4)
+        cream: "#F0EEE6",
         sand: {
-          50: "#faf7f1",
-          100: "#f3ece0",
-          200: "#e6d8c3",
-          300: "#d6bf9d",
-          400: "#c4a275",
+          DEFAULT: "#E4DBC8",
+          50: "#F5F2EA",
+          100: "#ECE6D9",
+          200: "#E4DBC8",
+          300: "#D6C9AE",
         },
         sage: {
-          400: "#8a9a7b",
-          500: "#6f8060",
-          600: "#586a4c",
-          700: "#46553d",
+          400: "#9DAE7B",
+          500: "#788C5D",
+          600: "#647349",
         },
-        slate: {
-          400: "#7689a0",
-          500: "#5a6e87",
-          600: "#48586d",
-          700: "#3a4757",
-          800: "#2c3744",
+        olive: {
+          500: "#4A5C3A",
+          600: "#3C4B2F",
+        },
+        slateblue: {
+          400: "#88A4BF",
+          500: "#6A8CAE",
+          600: "#577693",
+        },
+        clay: {
+          400: "#B98870",
+          500: "#A8755A",
+          600: "#8C6049",
         },
         terracotta: {
-          400: "#c46b4f",
-          500: "#ab5639",
-          600: "#8f4530",
+          400: "#E08B6E",
+          500: "#D97757",
+          600: "#C2613F",
         },
-        ink: "#2b2620",
-        bone: "#fdfbf6",
+        // Warm charcoal / browns for dark mode + ink
+        charcoal: {
+          DEFAULT: "#23211C",
+          base: "#1A1815",
+          surface: "#262320",
+          raised: "#322E29",
+        },
+        taupe: {
+          400: "#8A8475",
+          500: "#7A7466",
+        },
+        ink: "#23211C",
+        bone: "#F0EEE6",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        content: "68rem",
+        content: "75rem", // 1200px
+        prose: "45rem", // 720px
       },
     },
   },

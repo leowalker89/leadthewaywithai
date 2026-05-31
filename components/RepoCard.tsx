@@ -23,17 +23,17 @@ export default function RepoCard({ name, url, description }: RepoCardProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col rounded-xl border border-sand-200 bg-bone p-7 transition-all hover:-translate-y-0.5 hover:border-sage-400/60 hover:shadow-md"
+      className="group flex flex-col rounded-xl border border-line bg-surface/60 p-7 transition-all hover:-translate-y-0.5 hover:border-terracotta-500/40 hover:shadow-lg hover:shadow-black/5"
     >
       <div className="flex items-center justify-between">
-        <span className="text-slate-500 transition-colors group-hover:text-ink">
+        <span className="text-muted transition-colors group-hover:text-fg">
           <GitHubMark />
         </span>
         <svg
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
-          className="h-4 w-4 text-slate-300 transition-colors group-hover:text-terracotta-500"
+          className="h-4 w-4 text-muted transition-colors group-hover:text-terracotta-500"
         >
           <path
             d="M6 14 14 6m0 0H7m7 0v7"
@@ -44,13 +44,13 @@ export default function RepoCard({ name, url, description }: RepoCardProps) {
           />
         </svg>
       </div>
-      <h3 className="mt-5 font-mono text-base font-semibold text-ink">
+      <h3 className="mt-5 font-mono text-base font-semibold text-fg">
         {name}
       </h3>
-      <p className="mt-3 flex-1 text-base leading-relaxed text-slate-600">
+      <p className="mt-3 flex-1 font-sans text-base leading-relaxed text-fg/75">
         {description}
       </p>
-      <span className="mt-6 text-xs font-medium uppercase tracking-wider text-sage-700">
+      <span className="mt-6 text-xs font-medium uppercase tracking-wider text-sage-500">
         View on GitHub
       </span>
     </a>
