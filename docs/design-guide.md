@@ -37,6 +37,12 @@ Optimize for credibility and visibility over lead generation.
 
 Key principles to apply on every change:
 
+- **Earth tones are the default brand atmosphere.** Colorado / Western earth
+  tones — warm cream, sand, sage, olive, slate blue, charcoal, clay, and a
+  terracotta/coral accent — are a primary design constraint, not a suggestion.
+  Both light and dark modes must read as warm and grounded. Never drift toward a
+  generic dark-tech or cyberpunk look. When a choice is ambiguous, pick the
+  warmer, earthier option.
 - **Lead with WHY/purpose, not credentials.** Open with what Leo builds and why
   it matters, then earn the right to list proof.
 - **One primary CTA per page.** Don't dilute with competing asks.
@@ -53,20 +59,27 @@ Key principles to apply on every change:
 
 ## 3. Inspiration → actionable patterns
 
-Treat the following as principles to apply, not sites to copy.
+Treat the following as principles to apply, not sites to copy. Each is filtered
+through the earth-tone constraint — borrow the *structure and feel* of these
+references, but render it in warm, grounded Western tones rather than their
+native palettes.
 
 - **Purpose-first minimalism** — clear mission, calm navigation, an emotional or
-  quotable hook near the top, and a thought-leadership content backbone.
+  quotable hook near the top, and a thought-leadership content backbone, set on
+  warm cream/sand rather than stark white.
 - **Content-first credibility** — let work and writing carry weight; use social
   proof and validation; tell stories per section; favor candid, personal
   photography over stock.
-- **Elegant intellectual restraint** — tasteful serif moments, neutral and
-  timeless palette, the feel of a practitioner who reads and thinks.
-- **Warm technical trust** — warm neutrals signaling collaboration and clarity, a
-  coral/orange accent, muted blue and olive as secondary accents, technical
-  elegance without coldness.
-- **Builder confidence** — technical but approachable, high-contrast
-  developer/product energy where it fits.
+- **Elegant intellectual restraint** — tasteful serif moments and a timeless,
+  restrained feel; here "neutral" means warm earth neutrals (cream, sand,
+  charcoal), never cool gray.
+- **Warm technical trust** — the most load-bearing reference: warm neutrals
+  signaling collaboration and clarity, a terracotta/coral accent, slate blue and
+  olive as secondary accents, technical elegance without coldness. This is the
+  warm-grounded direction the whole palette extends.
+- **Builder confidence** — technical but approachable; high-contrast
+  developer/product energy is welcome, but contrast comes from charcoal-on-cream
+  and clay accents, not neon or pure black.
 - **Systematic hierarchy** — one primary color, one accent, consistent usage, and
   an 8-point spacing system applied everywhere.
 
@@ -74,38 +87,68 @@ Treat the following as principles to apply, not sites to copy.
 
 ## 4. Color systems
 
-Two coherent palettes. **Recommendation:** ship dark as the primary AI/tech theme
-with a light-mode toggle.
+**Earth tones first.** The palette is built from a Colorado / Western earth-tone
+family — warm cream, sand, sage, olive, slate blue, charcoal, clay, and a
+terracotta/coral accent. Both modes draw from this same family; the difference is
+which earth tones sit in the background versus the foreground. Neither mode should
+ever read as a generic dark-tech or sterile-white template.
 
-### Option A — Dark Clarity (recommended primary)
+Shared earth-tone family:
 
-| Role               | Hex       |
-| ------------------ | --------- |
-| Background (base)  | `#0F1117` |
-| Surface / elevated | `#1A1F2E` |
-| Text (primary)     | `#F0EEE6` |
-| Accent (primary)   | `#D97757` |
-| Secondary accent   | `#6A9BCC` |
-| Tertiary accent    | `#788C5D` |
-| Muted / caption    | `#B0AEA5` |
+| Token       | Hex       | Notes                                  |
+| ----------- | --------- | -------------------------------------- |
+| Cream       | `#F0EEE6` | Warm off-white — primary light surface |
+| Sand        | `#E4DBC8` | Warmer paper tone for elevated cards   |
+| Sage        | `#788C5D` | Muted green secondary accent           |
+| Olive       | `#4A5C3A` | Deeper green for emphasis              |
+| Slate blue  | `#6A8CAE` | Calm blue secondary accent             |
+| Charcoal    | `#23211C` | Warm near-black (brown-leaning, not blue) |
+| Clay        | `#A8755A` | Earthy brown-orange, mid-tone bridge   |
+| Terracotta  | `#D97757` | Primary accent — shared across modes   |
 
-### Option B — Light Leader
+**Recommendation:** ship dark as the primary theme with a light-mode toggle.
+Both palettes below are subsets of the family above — keep them warm.
 
-Good for a thought-leadership / speaking emphasis. Consider as the light-mode
-companion to Option A.
+### Option A — Warm Earth Dark (recommended primary)
 
-| Role               | Hex       |
-| ------------------ | --------- |
-| Background (base)  | `#FAFAF7` |
-| Surface / elevated | `#F2EFE4` |
-| Text (primary)     | `#1C1C1E` |
-| Primary            | `#1B3A6B` |
-| Accent             | `#D97757` |
-| Secondary accent   | `#4A5C3A` |
-| Muted / caption    | `#9B9B9B` |
+A dark mode that feels like dusk over high desert, not a terminal. Backgrounds are
+warm charcoal/brown rather than cool blue-black, so the terracotta accent reads as
+firelight rather than neon.
 
-The coral/terracotta `#D97757` is the shared accent across both modes — use it as
-the single consistent highlight color.
+| Role               | Hex       | Earth note                      |
+| ------------------ | --------- | ------------------------------- |
+| Background (base)  | `#1A1815` | Warm charcoal (brown undertone) |
+| Surface / elevated | `#262320` | Lifted warm brown-charcoal      |
+| Text (primary)     | `#F0EEE6` | Cream                           |
+| Accent (primary)   | `#D97757` | Terracotta                      |
+| Secondary accent   | `#6A8CAE` | Slate blue (muted, not bright)  |
+| Tertiary accent    | `#9DAE7B` | Lightened sage for dark contrast|
+| Muted / caption    | `#B0AEA5` | Warm taupe                      |
+
+> Avoid cool blue-blacks like `#0F1117`/`#1A1F2E` — they tip the mode toward
+> cyberpunk. Keep base values brown-warm.
+
+### Option B — Warm Editorial Light
+
+Warm and editorial — like quality paper stock — for a thought-leadership / speaking
+emphasis. The companion light mode. Background is cream/sand, never pure white, so
+the page feels grounded and printed rather than clinical.
+
+| Role               | Hex       | Earth note                      |
+| ------------------ | --------- | ------------------------------- |
+| Background (base)  | `#F0EEE6` | Cream                           |
+| Surface / elevated | `#E4DBC8` | Sand                            |
+| Text (primary)     | `#23211C` | Warm charcoal                   |
+| Primary            | `#4A5C3A` | Olive (grounded, not navy)      |
+| Accent             | `#D97757` | Terracotta                      |
+| Secondary accent   | `#6A8CAE` | Slate blue                      |
+| Muted / caption    | `#8A8475` | Warm gray-taupe                 |
+
+> Avoid sterile whites like `#FAFAF7` and cool grays like `#9B9B9B` — warm every
+> neutral toward sand/taupe.
+
+The terracotta `#D97757` is the single shared accent across both modes — use it as
+the one consistent highlight color, supported by sage/olive and slate blue.
 
 ---
 
@@ -184,13 +227,17 @@ A future Agent Skill should review site changes against this guide. Checklist:
 
 - **Purpose-first hero** — does the page lead with WHY, not a credential dump?
 - **Human / technical balance** — is the person visible alongside the engineering?
+- **Earth tones first** — does the page read as warm/grounded Western earth tones
+  in both modes? Backgrounds warm (charcoal-brown / cream-sand), never cool
+  blue-black or sterile white. Reject generic dark-tech or cyberpunk drift.
 - **Color adherence** — single accent (`#D97757`), one primary, consistent usage;
-  matches Option A or B.
+  matches Option A or B and stays within the shared earth-tone family.
 - **Typography adherence** — heading/body/mono roles and the desktop scale above.
 - **Narrative arc** — does the story move now → context (Ranger, data science) →
   practical AI, with operating principles rather than resume bullets?
 - **Healthcare not over-indexed** — present and credible, but not dominating the
   hero or the whole site.
 - **No resume-only copy** — sections tell stories and outcomes, not just lists.
-- **No generic AI aesthetic** — warm, human, specific; not cold or templated.
+- **No generic AI aesthetic** — warm, human, specific, and earth-toned; not cold,
+  neon, or templated.
 - **One primary CTA per page** and mobile-first layout intact.
