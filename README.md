@@ -77,6 +77,13 @@ tailwind.config.ts  # Colorado earth-tone palette + font tokens
 
 ## Design
 
+See [`docs/design-guide.md`](docs/design-guide.md) for the intended direction of
+the site — a personal site about Leo Walker the person (AI engineer, leader,
+builder/teacher/writer), with palettes, typography, layout blueprint, voice, and
+a review checklist to guide future iterations.
+
+Current skeleton:
+
 - **Palette:** Colorado-inspired earth tones — warm tans (`sand`), sage greens
   (`sage`), slate blues (`slate`), deep terracotta accent (`terracotta`).
 - **Typography:** Fraunces for display headings, Inter for body and UI chrome.
