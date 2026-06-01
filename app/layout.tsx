@@ -30,7 +30,7 @@ const SITE_URL = "https://leadthewaywithai.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Leo Walker — AI Engineer & Operator | Lead The Way with AI",
+    default: "Leo Walker - AI Engineer & Operator | Lead The Way with AI",
     template: "%s | Lead The Way with AI",
   },
   description:
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Leo Walker" }],
   openGraph: {
-    title: "Leo Walker — AI Engineer & Operator",
+    title: "Leo Walker - AI Engineer & Operator",
     description:
       "I build AI systems that turn complexity into momentum. Ranger-shaped operator, data scientist, and builder of practical AI.",
     url: SITE_URL,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Leo Walker — AI Engineer & Operator",
+    title: "Leo Walker - AI Engineer & Operator",
     description:
       "I build AI systems that turn complexity into momentum. Ranger-shaped operator, data scientist, and builder of practical AI.",
   },

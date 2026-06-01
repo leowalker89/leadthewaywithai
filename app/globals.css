@@ -89,3 +89,40 @@ button:focus-visible {
     transform: translateY(0);
   }
 }
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: rgba(38, 35, 32, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(240, 238, 230, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root.light .glass-card {
+  background: rgba(228, 219, 200, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(35, 33, 28, 0.06);
+}
+
+.glass-card:hover {
+  border-color: rgba(217, 119, 87, 0.45); /* terracotta-500 with opacity */
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+:root.light .glass-card:hover {
+  border-color: rgba(74, 92, 58, 0.45); /* olive-500 with opacity */
+  box-shadow: 0 12px 30px -10px rgba(35, 33, 28, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Custom interactive pill buttons */
+.interactive-pill {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.interactive-pill:hover {
+  transform: scale(1.02);
+}
+

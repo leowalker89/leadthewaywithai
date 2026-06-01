@@ -11,8 +11,7 @@ export default function Footer() {
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
               AI engineer and Ranger-shaped operator. Building practical systems
-              that turn complexity into momentum — currently in clinical AI at
-              KaiCare.ai.
+              that turn complexity into momentum, drawing on advanced analytics experience at BP and IVP, now leading clinical AI engineering at KaiCare.ai.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-10">
@@ -23,13 +22,13 @@ export default function Footer() {
               <Link href="/#story" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 About
               </Link>
-              <Link href="/projects" className="text-fg/75 transition-colors hover:text-terracotta-500">
+              <Link href="/#work" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Work
               </Link>
-              <Link href="/talks" className="text-fg/75 transition-colors hover:text-terracotta-500">
+              <Link href="/#writing" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Writing &amp; Talks
               </Link>
-              <Link href="/consulting" className="text-fg/75 transition-colors hover:text-terracotta-500">
+              <Link href="/#contact" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Contact
               </Link>
             </nav>
