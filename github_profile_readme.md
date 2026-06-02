@@ -41,4 +41,4 @@ AI Engineer at **[KaiCare.ai](https://kaicare.ai)** shipping secure clinical age
 ### Connect
 * **Website**: [leadthewaywithai.com](https://leadthewaywithai.com)
 * **LinkedIn**: [linkedin.com/in/leowalker](https://www.linkedin.com/in/leowalker)
-* **Email**: [leowalker89@gmail.com](mailto:leowalker89@gmail.com)
+* **Email**: [leo@leadthewaywithai.com](mailto:leo@leadthewaywithai.com)

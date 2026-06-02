@@ -1,7 +1,19 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import RepoCard from "@/components/RepoCard";
+
+interface EventItem {
+  id: string;
+  name: string;
+  slug: string;
+  startedAt: string;
+  endedAt: string;
+  timezone: string;
+  isOnline: boolean;
+  posterUrl: string | null;
+}
 
 const proofPoints = [
   "AI Engineer @ KaiCare.ai",
@@ -77,14 +89,17 @@ const services = [
   {
     title: "Engineering",
     body: "Designing and shipping production-grade AI systems. Specializing in modular agentic workflows, custom Model Context Protocol (MCP) integrations, robust NLP pipelines, and HIPAA-compliant clinical AI architectures.",
+    cta: "Inquire about engineering",
   },
   {
     title: "Workshops & Training",
     body: "Intense, code-forward training sessions for engineering teams. Hands-on modules covering LLM composition patterns, agent tool calling, deterministic evaluation frameworks, and MLOps best practices.",
+    cta: "Book a workshop",
   },
   {
     title: "Advisory & Tech Diligence",
     body: "Providing strategic guidance on AI roadmaps, scaling large-scale analytics (drawing on BP experience), and rigorous technical due diligence for venture capital and private equity investors (drawing on IVP experience).",
+    cta: "Request advisory",
   },
 ];
 
@@ -161,6 +176,27 @@ function EducationLogo({ institution, className }: { institution: string; classN
 }
 
 export default function Home() {
+  const [events, setEvents] = useState<EventItem[]>([]);
+  const [eventsLoading, setEventsLoading] = useState<boolean>(true);
+  const [showAllEvents, setShowAllEvents] = useState<boolean>(false);
+
+  useEffect(() => {
+    async function loadEvents() {
+      try {
+        const res = await fetch("/api/events");
+        if (res.ok) {
+          const data = await res.json();
+          setEvents(data);
+        }
+      } catch (err) {
+        console.error("Failed to load events:", err);
+      } finally {
+        setEventsLoading(false);
+      }
+    }
+    loadEvents();
+  }, []);
+
   return (
     <div className="space-y-32 py-16 sm:py-24">
       {/* Home / Hero */}
@@ -170,10 +206,10 @@ export default function Home() {
             <span className="h-1.5 w-1.5 rounded-full bg-terracotta-500 animate-pulse" />
             AI Engineer · Operator · Builder
           </p>
-          <h1 className="max-w-4xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-5xl lg:text-6xl">
             I build <span className="text-terracotta-500">effective AI systems</span> engineered for critical operations.
           </h1>
-          <p className="mt-8 max-w-3xl font-sans text-xl sm:text-2xl md:text-3xl leading-relaxed text-fg/90">
+          <p className="mt-8 max-w-3xl font-sans text-lg sm:text-xl md:text-2xl leading-relaxed text-fg/90">
             AI Engineer at KaiCare.ai. I build secure, compliant AI agents that streamline clinical workflows, translating years of operational leadership and data science into reliable software.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -216,122 +252,62 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* The Journey (Timeline) */}
-      <section
-        id="story"
-        aria-labelledby="story-heading"
-        className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8"
-      >
+      {/* Services & Value (#1 Section) */}
+      <section id="services" aria-labelledby="services-heading" className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8">
         <div className="max-w-prose">
           <p className="text-sm font-semibold uppercase tracking-widest text-sage-500">
-            The Journey
+            Offering &amp; Value
           </p>
           <h2
-            id="story-heading"
-            className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-5xl leading-tight"
+            id="services-heading"
+            className="mt-3 font-display text-2xl font-semibold tracking-tight text-fg sm:text-4xl"
           >
-            Precision, pattern recognition, practical systems.
+            AI engineering, workshops, and advisory built for momentum.
           </h2>
+          <p className="mt-4 text-base sm:text-lg leading-relaxed text-fg/85">
+            I partner with tech leaders, enterprise teams, and venture investors to design, validate, and scale practical AI and analytical systems. No hype: just rigorous engineering.
+          </p>
         </div>
 
-        <div className="mt-16 relative border-l border-line/30 ml-3 md:ml-6 space-y-16">
-          {timeline.map((step) => (
+        {/* Services Grid */}
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {services.map((service) => (
             <div
-              key={step.company}
-              className="relative pl-8 sm:pl-12 group reveal"
+              key={service.title}
+              className="glass-card rounded-2xl border p-8 flex flex-col justify-between"
             >
-              {/* Timeline dot */}
-              <div className="absolute -left-[9px] md:-left-[10px] top-2 h-4.5 w-4.5 rounded-full border border-line bg-bg group-hover:border-terracotta-500 transition-colors duration-300" />
-              
-              <div className="max-w-4xl">
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-terracotta-500 block mb-3 md:hidden">
-                  {step.era} · {step.focus}
-                </span>
-                
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center mb-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface border border-line/50 text-fg shadow-sm group-hover:border-terracotta-500/40 group-hover:shadow-terracotta-500/5 transition-all duration-300">
-                    <CompanyLogo company={step.company} className="max-h-8 max-w-10" />
-                  </div>
-                  <div>
-                    <h3 className="font-display text-2xl sm:text-3xl font-semibold text-fg leading-tight">
-                      {step.role} <span className="text-muted font-normal">at {step.company}</span>
-                    </h3>
-                    <span className="hidden font-mono text-xs font-semibold uppercase tracking-widest text-muted md:block mt-1">
-                      {step.era} · {step.focus}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Operating Principle block */}
-                <div className="mt-4 inline-block border-l-2 border-sage-500/50 pl-4 py-0.5">
-                  <span className="font-mono text-xs font-semibold uppercase tracking-widest text-sage-500 block">
-                    Operating Principle
-                  </span>
-                  <p className="mt-1 text-lg sm:text-xl font-medium text-fg/90 italic">
-                    &ldquo;{step.principle}&rdquo;
-                  </p>
-                </div>
-
-                <p className="mt-5 font-sans text-lg sm:text-xl leading-relaxed text-fg/85">
-                  {step.description}
+              <div>
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-fg">
+                  {service.title}
+                </h3>
+                <p className="mt-4 font-sans text-sm sm:text-base leading-relaxed text-fg/85">
+                  {service.body}
                 </p>
+              </div>
+              <div className="mt-8 pt-4 border-t border-line/25">
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-terracotta-500 hover:text-terracotta-600 transition-colors"
+                >
+                  {service.cta} &rarr;
+                </Link>
               </div>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* Education & Credentials */}
-      <section className="mx-auto max-w-content px-5 sm:px-8">
-        <div className="max-w-prose">
-          <p className="text-sm font-semibold uppercase tracking-widest text-sage-500">
-            Education
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-5xl">
-            Academic Foundation
-          </h2>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="glass-card rounded-2xl border p-8 sm:p-10 group transition-all duration-300">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center mb-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface border border-line/50 text-fg shadow-sm group-hover:border-terracotta-500/40 group-hover:shadow-terracotta-500/5 transition-all duration-300">
-                <EducationLogo institution="University of Denver" className="max-h-8 max-w-10" />
-              </div>
-              <div>
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-terracotta-500 block">
-                  MS · Data Science
-                </span>
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-fg mt-0.5">
-                  University of Denver
-                </h3>
-              </div>
-            </div>
-            <p className="font-mono text-xs text-muted">Graduated 2023 · GPA 3.8</p>
-            <p className="mt-4 font-sans text-lg sm:text-xl leading-relaxed text-fg/85">
-              Rigorous advanced study covering Python software development, databases, parallel computing, algorithms, and deep machine learning pipelines.
-            </p>
-          </div>
-
-          <div className="glass-card rounded-2xl border p-8 sm:p-10 group transition-all duration-300">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center mb-5">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-surface border border-line/50 text-fg shadow-sm group-hover:border-terracotta-500/40 group-hover:shadow-terracotta-500/5 transition-all duration-300">
-                <EducationLogo institution="Virginia Military Institute" className="max-h-8 max-w-10" />
-              </div>
-              <div>
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-terracotta-500 block">
-                  BS · Electrical &amp; Computer Engineering
-                </span>
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-fg mt-0.5">
-                  Virginia Military Institute
-                </h3>
-              </div>
-            </div>
-            <p className="font-mono text-xs text-muted">Graduated 2011</p>
-            <p className="mt-4 font-sans text-lg sm:text-xl leading-relaxed text-fg/85">
-              Foundational engineering degree focusing on computer systems architecture, electronics design, digital signal processing, mathematics, and calculus.
-            </p>
-          </div>
+        {/* Focus areas */}
+        <div className="mt-12">
+          <ul className="flex flex-wrap gap-2.5">
+            {focusAreas.map((area) => (
+              <li
+                key={area}
+                className="rounded-full border border-sage-500/40 bg-sage-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-sage-500"
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -343,11 +319,11 @@ export default function Home() {
           </p>
           <h2
             id="work-heading"
-            className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-5xl"
+            className="mt-3 font-display text-2xl font-semibold tracking-tight text-fg sm:text-4xl"
           >
             What I&apos;ve built
           </h2>
-          <p className="mt-4 text-lg sm:text-xl text-fg/75">
+          <p className="mt-4 text-base sm:text-lg text-fg/75">
             Open-source repositories, agent skills, and deployed AI spaces built to solve practical workflow and data parsing challenges.
           </p>
         </div>
@@ -367,11 +343,11 @@ export default function Home() {
           </p>
           <h2
             id="writing-heading"
-            className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-5xl"
+            className="mt-3 font-display text-2xl font-semibold tracking-tight text-fg sm:text-4xl"
           >
             Ideas worth sharing
           </h2>
-          <p className="mt-4 max-w-prose font-sans text-lg sm:text-xl leading-relaxed text-fg/75">
+          <p className="mt-4 max-w-prose font-sans text-base sm:text-lg leading-relaxed text-fg/75">
             Notes, essays, and speaking engagements on AI, NLP, energy analytics, investment diligence, and the operational road from the military to building software.
           </p>
         </div>
@@ -384,10 +360,10 @@ export default function Home() {
               <p className="font-mono text-sm font-semibold uppercase tracking-widest text-sage-500">
                 Drafts &amp; working papers
               </p>
-              <h3 className="mt-3 font-display text-xl sm:text-2xl font-semibold text-fg">
+              <h3 className="mt-3 font-display text-lg sm:text-xl font-semibold text-fg">
                 Active writing projects
               </h3>
-              <p className="mt-4 font-sans text-base sm:text-lg leading-relaxed text-fg/75">
+              <p className="mt-4 font-sans text-sm sm:text-base leading-relaxed text-fg/75">
                 Summaries, guides, and strategic frameworks under active drafting:
               </p>
               
@@ -397,7 +373,7 @@ export default function Home() {
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-terracotta-500 bg-terracotta-500/10 px-2 py-0.5 rounded">Drafting</span>
                     <span className="font-mono text-xs text-muted">8 min read</span>
                   </div>
-                  <h4 className="mt-2 font-display text-lg font-semibold text-fg">
+                  <h4 className="mt-2 font-display text-base font-semibold text-fg">
                     Safety by Design: Architecting HIPAA-Grade Clinical AI Systems
                   </h4>
                   <p className="mt-1 text-sm text-fg/70">
@@ -410,7 +386,7 @@ export default function Home() {
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage-500 bg-sage-500/10 px-2 py-0.5 rounded">In Review</span>
                     <span className="font-mono text-xs text-muted">12 min read</span>
                   </div>
-                  <h4 className="mt-2 font-display text-lg font-semibold text-fg">
+                  <h4 className="mt-2 font-display text-base font-semibold text-fg">
                     Model Context Protocol (MCP): The New Standard for Agent Workflows
                   </h4>
                   <p className="mt-1 text-sm text-fg/70">
@@ -423,7 +399,7 @@ export default function Home() {
                     <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-muted bg-surface px-2 py-0.5 rounded">Planned</span>
                     <span className="font-mono text-xs text-muted">15 min read</span>
                   </div>
-                  <h4 className="mt-2 font-display text-lg font-semibold text-fg">
+                  <h4 className="mt-2 font-display text-base font-semibold text-fg">
                     Heavy Asset Energy Analytics: Lessons from physical pipelines
                   </h4>
                   <p className="mt-1 text-sm text-fg/70">
@@ -435,23 +411,131 @@ export default function Home() {
           </div>
 
           {/* Talk series */}
-          <div className="glass-card rounded-2xl border p-8 sm:p-10 relative overflow-hidden">
+          {/* Talk series */}
+          <div className="glass-card rounded-2xl border p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between group transition-all duration-300">
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-slateblue-500/5 rounded-full blur-3xl pointer-events-none" />
-            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-slateblue-500/40 bg-slateblue-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-slateblue-500">
-              MLOps Community · Chapter Lead
-            </p>
-            <h3 className="font-display text-xl sm:text-2xl font-semibold text-fg">
-              Coding Agents Lunch &amp; Learn
-            </h3>
-            <p className="mt-4 font-sans text-base sm:text-lg leading-relaxed text-fg/75 sm:text-xl">
-              Co-hosting a recurring technical series with the MLOps Community focusing on the practical engineering of coding agents, tool-calling mechanisms, and Model Context Protocol (MCP) integrations.
-            </p>
-            <div className="mt-6">
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <p className="inline-flex items-center gap-2 rounded-full border border-slateblue-500/40 bg-slateblue-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-slateblue-500">
+                  MLOps Community · Chapter Lead
+                </p>
+                
+                <a
+                  href="/api/events/rss"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-orange-500/30 bg-orange-500/5 hover:bg-orange-500/10 px-2.5 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-orange-500 transition-all hover:scale-102"
+                  title="Subscribe to RSS Feed"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                    <path fillRule="evenodd" d="M3.75 4.5a.75.75 0 0 1 .75-.75h.75c8.284 0 15 6.716 15 15v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75C17.25 11.64 12.36 6.75 6.25 6.75h-.75a.75.75 0 0 1-.75-.75V4.5Zm0 6.75a.75.75 0 0 1 .75-.75h.75c4.556 0 8.25 3.694 8.25 8.25v.75a.75.75 0 0 1-.75.75h-.75a.75.75 0 0 1-.75-.75v-.75c0-2.899-2.351-5.25-5.25-5.25h-.75a.75.75 0 0 1-.75-.75v-.75Zm0 6.75a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" clipRule="evenodd" />
+                  </svg>
+                  RSS Feed
+                </a>
+              </div>
+
+              <h3 className="font-display text-lg sm:text-xl font-semibold text-fg">
+                Coding Agents Lunch &amp; Learn
+              </h3>
+              <p className="mt-3 font-sans text-sm leading-relaxed text-fg/75">
+                Co-hosting a recurring technical series with the MLOps Community focusing on the practical engineering of coding agents, tool-calling mechanisms, and Model Context Protocol (MCP) integrations.
+              </p>
+
+              {/* Dynamic Events List */}
+              <div className="mt-6 space-y-4">
+                {eventsLoading ? (
+                  // Loading skeletons
+                  [1, 2, 3, 4, 5].map((n) => (
+                    <div key={n} className="animate-pulse flex items-start gap-4 border-l-2 border-line/30 pl-4 py-1.5">
+                      <div className="flex-1 space-y-2 py-0.5">
+                        <div className="h-3 w-1/4 bg-surface-2 rounded animate-pulse" />
+                        <div className="h-4 w-3/4 bg-surface rounded animate-pulse" />
+                      </div>
+                    </div>
+                  ))
+                ) : events.length === 0 ? (
+                  <p className="text-sm text-muted">No sessions found.</p>
+                ) : (
+                  (showAllEvents ? events : events.slice(0, 5)).map((e) => {
+                    const eventDate = new Date(e.startedAt);
+                    const isUpcoming = eventDate > new Date();
+                    
+                    const formattedDate = eventDate.toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    });
+                    
+                    const displayName = e.name
+                      .replace(/^Coding Agents\s*(Lunch & Learn|Lunch and Learn)?\s*[\-–:,]?\s*/i, "")
+                      .trim() || e.name;
+
+                    return (
+                      <div 
+                        key={e.id} 
+                        className="group/item border-l-2 border-line/40 pl-4 py-1.5 hover:border-terracotta-500/60 transition-colors flex items-start justify-between gap-4"
+                      >
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="font-mono text-xs text-muted">{formattedDate}</span>
+                            {isUpcoming && (
+                              <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-sage-500 bg-sage-500/10 px-1.5 py-0.5 rounded animate-pulse">
+                                Upcoming
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="mt-1 font-display text-sm font-semibold text-fg group-hover/item:text-terracotta-500 transition-colors truncate">
+                            <a 
+                              href={`https://home.mlops.community/public/events/${e.slug}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="focus:outline-none"
+                            >
+                              {displayName}
+                            </a>
+                          </h4>
+                        </div>
+                        
+                        <a 
+                          href={`https://home.mlops.community/public/events/${e.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted hover:text-fg transition-colors shrink-0 mt-0.5"
+                          title="View event details"
+                        >
+                          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
+                            <path
+                              d="M6 14 14 6m0 0H7m7 0v7"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+
+            {/* Bottom Actions */}
+            <div className="mt-8 pt-4 border-t border-line/10 flex flex-wrap items-center justify-between gap-4">
+              {!eventsLoading && events.length > 5 && (
+                <button
+                  onClick={() => setShowAllEvents(!showAllEvents)}
+                  className="text-xs font-bold uppercase tracking-wider text-muted hover:text-fg transition-colors focus:outline-none"
+                >
+                  {showAllEvents ? "Show Less" : `Show All Sessions (${events.length})`}
+                </button>
+              )}
+              
               <a
                 href="https://home.mlops.community/home/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-terracotta-500 hover:text-terracotta-600 transition-colors"
               >
                 See MLOps Community events
                 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
@@ -469,83 +553,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Consulting & Contact (Contact) */}
-      <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8">
-        <div className="max-w-prose">
-          <p className="text-sm font-semibold uppercase tracking-widest text-sage-500">
-            Contact &amp; consulting
-          </p>
-          <h2
-            id="contact-heading"
-            className="mt-3 font-display text-3xl font-semibold tracking-tight text-fg sm:text-5xl"
+      {/* Link to About/Story Page */}
+      <section className="mx-auto max-w-content px-5 sm:px-8">
+        <div className="glass-card rounded-2xl border p-8 sm:p-10 relative overflow-hidden flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div className="max-w-2xl">
+            <h3 className="font-display text-xl sm:text-2xl font-semibold text-fg">
+              Operational Leadership &amp; History
+            </h3>
+            <p className="mt-2 font-sans text-sm sm:text-base leading-relaxed text-fg/75">
+              From logistics leadership in the 75th Ranger Regiment to advanced due diligence at IVP and analytics at BP. Read my full journey and credentials.
+            </p>
+          </div>
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-semibold text-fg transition-all hover:border-terracotta-500/60 hover:text-terracotta-500 whitespace-nowrap shrink-0"
           >
-            Let&apos;s build something that works
-          </h2>
-          <p className="mt-4 text-lg sm:text-xl leading-relaxed text-fg/85">
-            I partner with tech leaders, enterprise teams, and venture investors to design, validate, and scale practical AI and analytical systems. No hype: just rigorous engineering.
-          </p>
+            Read my story
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
+      </section>
 
-        {/* Services Grid */}
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="glass-card rounded-2xl border p-8 flex flex-col justify-between"
-            >
-              <div>
-                <h3 className="font-display text-xl sm:text-2xl font-semibold text-fg">
-                  {service.title}
-                </h3>
-                <p className="mt-4 font-sans text-base sm:text-lg leading-relaxed text-fg/85">
-                  {service.body}
-                </p>
-              </div>
-              <div className="mt-8 pt-4 border-t border-line/25">
-                <span className="text-xs font-semibold uppercase tracking-widest text-terracotta-500">
-                  Structured offering
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Focus areas */}
-        <div className="mt-12">
-          <ul className="flex flex-wrap gap-2.5">
-            {focusAreas.map((area) => (
-              <li
-                key={area}
-                className="rounded-full border border-sage-500/40 bg-sage-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-sage-500"
-              >
-                {area}
-              </li>
-            ))}
-          </ul>
-        </div>
-
+      {/* Contact Section */}
+      <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8">
         {/* Primary CTA */}
-        <div className="mt-20 glass-card rounded-2xl border p-8 sm:p-12 relative overflow-hidden">
+        <div className="glass-card rounded-2xl border p-8 sm:p-12 relative overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-terracotta-500/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-sage-500/5 rounded-full blur-3xl pointer-events-none" />
 
-          <h3 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-fg">
+          <h2 id="contact-heading" className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-fg">
             Start a conversation
-          </h3>
-          <p className="mt-4 max-w-prose font-sans text-base sm:text-lg leading-relaxed text-fg/75 sm:text-xl">
+          </h2>
+          <p className="mt-4 max-w-prose font-sans text-sm sm:text-base leading-relaxed text-fg/75">
             If you are looking for clinical AI expertise, rigorous technical diligence, or engineering mentorship, get in touch today.
           </p>
           
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href="mailto:leowalker89@gmail.com"
+              href="mailto:leo@leadthewaywithai.com"
               className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-terracotta-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base transition-all hover:bg-terracotta-600 hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
                 <rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
                 <path d="m3 6 7 5 7-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              Email leowalker89@gmail.com
+              Email leo@leadthewaywithai.com
             </a>
             <a
               href="https://www.linkedin.com/in/leowalker"

@@ -6,11 +6,12 @@ import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
-  { href: "/#", label: "Home" },
-  { href: "/#story", label: "About" },
+  { href: "/", label: "Home" },
+  { href: "/#services", label: "Services" },
   { href: "/#work", label: "Work" },
+  { href: "/about", label: "About" },
   { href: "/#writing", label: "Writing" },
-  { href: "/#contact", label: "Contact" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {

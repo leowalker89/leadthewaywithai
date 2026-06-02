@@ -19,16 +19,19 @@ export default function Footer() {
               <span className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted">
                 Explore
               </span>
-              <Link href="/#story" className="text-fg/75 transition-colors hover:text-terracotta-500">
-                About
+              <Link href="/#services" className="text-fg/75 transition-colors hover:text-terracotta-500">
+                Services
               </Link>
               <Link href="/#work" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Work
               </Link>
+              <Link href="/about" className="text-fg/75 transition-colors hover:text-terracotta-500">
+                About
+              </Link>
               <Link href="/#writing" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Writing &amp; Talks
               </Link>
-              <Link href="/#contact" className="text-fg/75 transition-colors hover:text-terracotta-500">
+              <Link href="#contact" className="text-fg/75 transition-colors hover:text-terracotta-500">
                 Contact
               </Link>
             </nav>
