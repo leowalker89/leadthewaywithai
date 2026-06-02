@@ -23,7 +23,7 @@ export default function RepoCard({ name, url, description }: RepoCardProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col rounded-xl border border-line bg-surface/60 p-7 transition-all hover:-translate-y-0.5 hover:border-terracotta-500/40 hover:shadow-lg hover:shadow-black/5"
+      className="group flex flex-col rounded-xl border border-line bg-surface/60 p-7 transition-all hover:-translate-y-0.5 hover:border-slateblue-500/40 hover:shadow-lg hover:shadow-black/5"
     >
       <div className="flex items-center justify-between">
         <span className="text-muted transition-colors group-hover:text-fg">
@@ -33,7 +33,7 @@ export default function RepoCard({ name, url, description }: RepoCardProps) {
           viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
-          className="h-4 w-4 text-muted transition-colors group-hover:text-terracotta-500"
+          className="h-4 w-4 text-muted transition-colors group-hover:text-sage-400"
         >
           <path
             d="M6 14 14 6m0 0H7m7 0v7"

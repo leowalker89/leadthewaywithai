@@ -205,11 +205,11 @@ export default function Home() {
       <section id="home" className="grain relative overflow-hidden scroll-mt-28">
         <div className="mx-auto max-w-content px-5 sm:px-8">
           <p className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-sage-500/40 bg-sage-500/10 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-sage-500">
-            <span className="h-1.5 w-1.5 rounded-full bg-terracotta-500 animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-sage-400 animate-pulse" />
             AI Engineer · Operator · Builder
           </p>
           <h1 className="max-w-4xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-4xl lg:text-5xl">
-            I build <span className="text-terracotta-500">effective AI systems</span> engineered for critical operations.
+            I build <span className="bg-gradient-to-r from-sage-400 to-slateblue-400 bg-clip-text text-transparent font-semibold">effective AI systems</span> engineered for critical operations.
           </h1>
           <p className="mt-6 max-w-3xl font-sans text-base sm:text-lg lg:text-xl leading-relaxed text-fg/90">
             AI Engineer at KaiCare.ai. I build secure, compliant AI agents that streamline clinical workflows, translating years of operational leadership and data science into reliable software.
@@ -217,7 +217,7 @@ export default function Home() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#work"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-terracotta-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base shadow-sm transition-all hover:bg-terracotta-600 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-slateblue-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base shadow-sm transition-all hover:bg-slateblue-600 hover:-translate-y-0.5"
             >
               See my work
               <ArrowRight className="h-4 w-4" />
@@ -289,7 +289,7 @@ export default function Home() {
               <div className="mt-8 pt-4 border-t border-line/25">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-terracotta-500 hover:text-terracotta-600 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-slateblue-500 hover:text-slateblue-600 transition-colors"
                 >
                   {service.cta} &rarr;
                 </Link>
@@ -357,7 +357,7 @@ export default function Home() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {/* Writing — Drafts & Working Papers */}
           <div className="glass-card rounded-2xl border p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between group transition-all duration-300">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-sage-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-56 h-56 bg-sage-500/10 rounded-full blur-3xl pointer-events-none" />
             <div>
               <p className="font-mono text-sm font-semibold uppercase tracking-widest text-sage-500">
                 Drafts &amp; working papers
@@ -370,9 +370,9 @@ export default function Home() {
               </p>
               
               <div className="mt-6 space-y-6">
-                <div className="border-l-2 border-line/40 pl-4 py-1 hover:border-terracotta-500/60 transition-colors">
+                <div className="border-l-2 border-line/40 pl-4 py-1 hover:border-sage-500/60 transition-colors">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-terracotta-500 bg-terracotta-500/10 px-2 py-0.5 rounded">Drafting</span>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-sage-500 bg-sage-500/10 px-2 py-0.5 rounded">Drafting</span>
                     <span className="font-mono text-xs text-muted">8 min read</span>
                   </div>
                   <h4 className="mt-2 font-display text-base font-semibold text-fg">
@@ -413,9 +413,8 @@ export default function Home() {
           </div>
 
           {/* Talk series */}
-          {/* Talk series */}
           <div className="glass-card rounded-2xl border p-8 sm:p-10 relative overflow-hidden flex flex-col justify-between group transition-all duration-300">
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-slateblue-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 w-56 h-56 bg-slateblue-500/10 rounded-full blur-3xl pointer-events-none" />
             <div>
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <p className="inline-flex items-center gap-2 rounded-full border border-slateblue-500/40 bg-slateblue-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-slateblue-500">
@@ -580,8 +579,8 @@ export default function Home() {
       <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8">
         {/* Primary CTA */}
         <div className="glass-card rounded-2xl border p-8 sm:p-12 relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-terracotta-500/5 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-sage-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-12 -right-12 w-56 h-56 bg-sage-500/8 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-56 h-56 bg-slateblue-500/8 rounded-full blur-3xl pointer-events-none" />
 
           <h2 id="contact-heading" className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-fg">
             Start a conversation
@@ -593,7 +592,7 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="mailto:leo@leadthewaywithai.com"
-              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-terracotta-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base transition-all hover:bg-terracotta-600 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-slateblue-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base transition-all hover:bg-slateblue-600 hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
                 <rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -605,7 +604,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/leowalker"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-fg transition-all hover:border-terracotta-500/60 hover:text-terracotta-500 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-fg transition-all hover:border-slateblue-500/60 hover:text-slateblue-500 hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-4 w-4">
                 <path d="M4.98 3.5a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5ZM3.5 8.25h3v8.25h-3V8.25Zm5 0h2.87v1.13h.04c.4-.72 1.38-1.48 2.84-1.48 3.04 0 3.6 1.9 3.6 4.38v4.22h-3v-3.74c0-.9-.02-2.05-1.27-2.05-1.27 0-1.46.97-1.46 1.98v3.81h-3V8.25Z" />

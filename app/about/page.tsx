@@ -104,7 +104,7 @@ export default function About() {
                 The Operator
               </p>
               <h1 className="font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-4xl lg:text-5xl">
-                Precision, pattern recognition, <span className="text-terracotta-500">practical systems</span>.
+                Precision, pattern recognition, <span className="bg-gradient-to-r from-sage-400 to-slateblue-400 bg-clip-text text-transparent font-semibold">practical systems</span>.
               </h1>
               <p className="mt-6 font-sans text-base sm:text-lg lg:text-xl leading-relaxed text-fg/90">
                 I’m Leo Walker. I build AI systems that turn complexity into momentum. 
@@ -263,8 +263,8 @@ export default function About() {
       <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-28 mx-auto max-w-content px-5 sm:px-8">
         {/* Primary CTA */}
         <div className="glass-card rounded-2xl border p-8 sm:p-12 relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-terracotta-500/5 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-sage-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-12 -right-12 w-56 h-56 bg-sage-500/8 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-56 h-56 bg-slateblue-500/8 rounded-full blur-3xl pointer-events-none" />
 
           <h2 id="contact-heading" className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-fg">
             Start a conversation
@@ -276,7 +276,7 @@ export default function About() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="mailto:leo@leadthewaywithai.com"
-              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-terracotta-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base transition-all hover:bg-terracotta-600 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-slateblue-500 px-6 py-3.5 text-sm font-semibold text-charcoal-base transition-all hover:bg-slateblue-600 hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-4 w-4">
                 <rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -288,7 +288,7 @@ export default function About() {
               href="https://www.linkedin.com/in/leowalker"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-fg transition-all hover:border-terracotta-500/60 hover:text-terracotta-500 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-fg transition-all hover:border-slateblue-500/60 hover:text-slateblue-500 hover:-translate-y-0.5 active:translate-y-0"
             >
               <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className="h-4 w-4">
                 <path d="M4.98 3.5a1.75 1.75 0 1 1 0 3.5 1.75 1.75 0 0 1 0-3.5ZM3.5 8.25h3v8.25h-3V8.25Zm5 0h2.87v1.13h.04c.4-.72 1.38-1.48 2.84-1.48 3.04 0 3.6 1.9 3.6 4.38v4.22h-3v-3.74c0-.9-.02-2.05-1.27-2.05-1.27 0-1.46.97-1.46 1.98v3.81h-3V8.25Z" />
