@@ -289,7 +289,7 @@ export default function Home() {
               <div className="mt-8 pt-4 border-t border-line/25">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-slateblue-500 hover:text-slateblue-600 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-terracotta-500 hover:text-terracotta-600 transition-colors"
                 >
                   {service.cta} &rarr;
                 </Link>
