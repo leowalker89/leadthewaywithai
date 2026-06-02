@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Warm Earth Dark — primary theme (design-guide.md §4 Option A) */
+/* Earth & Slate Dark — primary theme */
 :root {
-  --bg: #1a1815; /* warm charcoal base */
-  --fg: #f0eee6; /* cream */
-  --surface: #262320; /* lifted warm brown-charcoal */
-  --surface-2: #322e29; /* raised */
-  --border: rgba(240, 238, 230, 0.12);
-  --muted: #b0aea5; /* warm taupe */
+  --bg: #14191f; /* rich, deep slate-charcoal (clearly blue-tinted) */
+  --fg: #eef1f6; /* cool cream */
+  --surface: #1d232c; /* lifted slate-surface */
+  --surface-2: #262e39; /* raised */
+  --border: rgba(238, 241, 246, 0.08);
+  --muted: #9eabb8; /* cool slate-taupe */
 }
 
 /* Warm Editorial Light — companion (Option B) */
@@ -28,6 +28,10 @@ html {
 
 body {
   background-color: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(120, 140, 93, 0.07) 0px, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(106, 140, 174, 0.07) 0px, transparent 55%);
+  background-attachment: fixed;
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
