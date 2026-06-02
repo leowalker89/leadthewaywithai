@@ -104,12 +104,14 @@ const services = [
 ];
 
 const focusAreas = [
+  "Model agnostic agentic workflows",
+  "MCP",
+  "Clinical AI",
   "LLM systems",
-  "Agent workflows (MCP)",
-  "Clinical AI (HIPAA)",
-  "VC & PE Technical Diligence",
-  "Advanced Data Analytics",
-  "Evaluation & Reliability",
+  "Recommendation systems",
+  "Forecasting",
+  "Advanced analytics",
+  "Observability and evaluations",
 ];
 
 const topics = [
