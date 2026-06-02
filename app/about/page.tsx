@@ -103,10 +103,10 @@ export default function About() {
               <p className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-sage-500/40 bg-sage-500/10 px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-sage-500">
                 The Operator
               </p>
-              <h1 className="font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-5xl lg:text-6xl">
+              <h1 className="font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-4xl lg:text-5xl">
                 Precision, pattern recognition, <span className="text-terracotta-500">practical systems</span>.
               </h1>
-              <p className="mt-8 font-sans text-lg sm:text-xl leading-relaxed text-fg/90">
+              <p className="mt-6 font-sans text-base sm:text-lg lg:text-xl leading-relaxed text-fg/90">
                 I’m Leo Walker. I build AI systems that turn complexity into momentum. 
                 My background spans machine learning engineering, growth equity due diligence, heavy-industry energy analytics, and tactical leadership as a Ranger veteran.
               </p>

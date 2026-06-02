@@ -206,10 +206,10 @@ export default function Home() {
             <span className="h-1.5 w-1.5 rounded-full bg-terracotta-500 animate-pulse" />
             AI Engineer · Operator · Builder
           </p>
-          <h1 className="max-w-4xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-4xl font-display text-3xl font-semibold leading-[1.1] tracking-tight text-fg sm:text-4xl lg:text-5xl">
             I build <span className="text-terracotta-500">effective AI systems</span> engineered for critical operations.
           </h1>
-          <p className="mt-8 max-w-3xl font-sans text-lg sm:text-xl md:text-2xl leading-relaxed text-fg/90">
+          <p className="mt-6 max-w-3xl font-sans text-base sm:text-lg lg:text-xl leading-relaxed text-fg/90">
             AI Engineer at KaiCare.ai. I build secure, compliant AI agents that streamline clinical workflows, translating years of operational leadership and data science into reliable software.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
