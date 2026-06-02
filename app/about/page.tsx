@@ -119,21 +119,14 @@ export default function About() {
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative group w-full max-w-md aspect-[4/5] rounded-2xl overflow-hidden border border-line bg-surface/40 p-2 shadow-xl shadow-black/10">
                 {/* Visual frame decoration */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-base/80 via-transparent to-transparent z-10 opacity-65" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-base/60 via-transparent to-transparent z-10 opacity-50 pointer-events-none transition-opacity duration-500 group-hover:opacity-30" />
                 
-                {/* Fallback pattern or real photo placeholder */}
-                <div className="w-full h-full rounded-xl bg-charcoal-surface border border-line/50 flex flex-col items-center justify-center p-6 text-center transition-all duration-500 group-hover:border-terracotta-500/45">
-                  <div className="h-16 w-16 rounded-full border border-sage-500/30 bg-sage-500/10 flex items-center justify-center text-sage-500 mb-4">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-7 w-7">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-display text-base font-semibold text-fg">Leo Walker</h4>
-                  <p className="font-mono text-xs text-muted mt-1 uppercase tracking-widest">AI Engineer &amp; Operator</p>
-                  <p className="font-sans text-xs text-fg/60 mt-3 max-w-[240px]">
-                    Veteran, MS Data Science, and builder of clinical orchestration layers.
-                  </p>
-                </div>
+                {/* Headshot Photo */}
+                <img 
+                  src="/headshot.jpg" 
+                  alt="Leo Walker Headshot" 
+                  className="w-full h-full rounded-xl object-cover transition-all duration-700 ease-out group-hover:scale-[1.03] filter grayscale contrast-[1.05] brightness-95 group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100"
+                />
               </div>
             </div>
           </div>
